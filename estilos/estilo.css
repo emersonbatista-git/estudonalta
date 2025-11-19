@@ -20,7 +20,7 @@ table.listagem tr {
     height: 50px;
 }
 table.listagem td {
-   /*border: 1px solid #ddd; */
+    border: 1px solid #ddd; 
     padding: 10px;
 }
 table.listagem tr:nth-child(even) {
