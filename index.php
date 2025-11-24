@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
     <title>Listagem de Jogos</title>
+    
 </head>
 <body>
     <?php
-    require_once "includes/banco.php"; 
+    require_once "includes/banco.php";
+    require_once "includes/funcoes.php";
     ?>
     <div id="corpo">
         <h1>Escolha seu Jogo</h1>
@@ -22,7 +24,9 @@
                     echo "<tr><td>Nenhum registro encontrado";
                   } else {
                     while ($reg=$busca->fetch_object()) {
-                        echo "<tr><td>$reg->capa<td>$reg->nome";
+                      $t = thumb($reg->capa);
+                        echo "<tr><td><img src='$t' class='mini'/>";
+                        echo "<td><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a>";
                         echo "<td>Adm";    
                     }
                   }
