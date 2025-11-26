@@ -6,4 +6,3 @@ echo "</footer>";
 
 $banco->close();
 
-?>
