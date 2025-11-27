@@ -1,0 +1,51 @@
+
+/*Configurações padroes*/
+body {
+    background-color: #ddd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+div#corpo {
+    width: 800px;
+    margin:auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 30px #777;
+
+}
+
+/*Tabela dos Jogos*/
+table.listagem {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    
+}
+/*Linha da tabela de jogos*/
+table.listagem tr{
+    height: 50px;
+
+}
+
+/*Celula da tabela*/
+table.listagem td{
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/*Cada linha impar ficara de cor diferente*/
+table.listagem tr:nth-child(even) {
+    background-color: #f2f2f2;
+
+}
+
+/*Alterado o tamanho somente da primeira coluna*/
+table.listagem td:nth-child(1){
+    max-width: 50px;
+}
+
+/*Alterado o tamanho somente da terceira coluna*/
+table.listagem td:nth-child(3){
+    max-width: 90px;
+    
+}
