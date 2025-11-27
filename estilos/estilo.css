@@ -19,8 +19,8 @@ table.listagem {
     width: 100%;
     text-align: left;
     border-collapse: collapse;
-    
 }
+
 /*Linha da tabela de jogos*/
 table.listagem tr{
     height: 50px;
