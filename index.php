@@ -29,8 +29,12 @@
             //Irei informar o caminho das fotos com referencia o nome do arquivo salvo no banco de dados na coluna capa <img src='fotos/$reg->capa' class='mini' /> //
             //Irei colocar uma função para checar se carregou o arquivo de imagem, caso nao encontar irá buscar uma imagem padrao.
             //Primeiro cria uma variavel que irá receber o resultado da função. com isso irei exibir apenas a variavel ao inves do caminho, uma vez que a funcao irá retornar o caminho//
+            
             $t = thumb($reg->capa);
-              echo "<tr><td><img src='$t' class='mini' /><td>$reg->nome";
+              echo "<tr><td><img src='$t' class='mini' />";
+              //Irei transformar o nome em um link
+              //detalhes.php?cod=$reg->cod passei a referencia que o cod vao ser igual ao cod do banco de dados, com isso ele irá trazer o codigo do jogo que for selecionado//
+              echo "<td><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a>";
               echo "<td>Adm";
 
             }

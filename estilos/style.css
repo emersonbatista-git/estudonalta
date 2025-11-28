@@ -53,3 +53,16 @@ table.listagem td:nth-child(3){
 img.mini {
     width: 50px;
 }
+
+/*Ajustando arquivo detalhes.php*/
+table.detalhes {
+    width: 100%;
+    
+}
+table.detalhes td {
+    padding: 10px;
+    vertical-align: top;
+}
+table.full {
+    height: 400px;
+}

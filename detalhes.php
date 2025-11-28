@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulo da Pagina</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <?php
+  /*Irá chamar a conexao com o banco e carregar as infoirmações nesta pagina*/ 
+  require_once "includes/banco.php";
+  /* Irá chamar a pagina de funcoes */
+  require_once "includes/funcoes.php";
+  ?>
+    
+    <div id="corpo">
+        <?php
+        //Criei uma variavel $c para pegar o codigo que veio da url
+
+        $c = $_GET['cod'] ?? 0;
+        //Select para trazer o codigo igual ao codigo que passei//
+        $busca = $banco->query("select *from jogos where cod='$c'");
+        
+        ?>
+        <h1>Detalhes do Jogo</h1>
+<!--Criei uma tabela com a 1 coluna com 3 linhas e as demias com 1 linha-->
+<table class="detalhes">
+   <?php 
+   /*Conferir se a busca deu certo e se é igual de 1, quero apenas um registro
+   Utilizei a variavel $reg para receber o resultado do select*/
+    if (!$busca) {
+        echo "<tr><td>Busca falhou!";
+    }else {
+        if($busca->num_rows == 1) {
+            $reg = $busca->fetch_object();
+        /*Criar uma variavel para receber atravez da funcao thump o nome do arquivo de foto*/ 
+            $t = thumb($reg->capa);
+        
+        /*Exibir o que eu quero na tela*/
+             echo "<tr><td rowspan='3'><img src='$t' class='full' />";
+             echo "<td><h2>$reg->nome</h2>";
+             echo "Nota: ". number_format($reg->nota ,"1") . "/10.0";
+             echo " <tr><td>$reg->descricao";
+             echo "<tr><td>Adm";  
+        }else {
+            echo "<tr><td>Nenhum registro encontrado!";
+        }
+    }
+  
+    
+    ?>
+
+</table>
+    <a href="index.php"><img src="icones/icoback.png" alt=""></a>
+
+    </div>
+</body>
+</html>
