@@ -48,3 +48,8 @@ table.listagem td:nth-child(3){
     width: 90px;
     
 }
+
+/*Ajustando o tamanho da fotos*/
+img.mini {
+    width: 50px;
+}
