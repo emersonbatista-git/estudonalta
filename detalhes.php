@@ -15,6 +15,7 @@
   ?>
     
     <div id="corpo">
+        <?php require_once "topo.php";?>
         <?php
         //Criei uma variavel $c para pegar o codigo que veio da url
 
@@ -37,7 +38,8 @@
         /*Criar uma variavel para receber atravez da funcao thump o nome do arquivo de foto*/ 
             $t = thumb($reg->capa);
         
-        /*Exibir o que eu quero na tela*/
+        /*Exibir o que eu quero na tela
+        rowspan = 3 fez que a primeira celula ocupasse 3 linhas*/
              echo "<tr><td rowspan='3'><img src='$t' class='full' />";
              echo "<td><h2>$reg->nome</h2>";
              echo "Nota: ". number_format($reg->nota ,"1") . "/10.0";
@@ -55,5 +57,6 @@
     <a href="index.php"><img src="icones/icoback.png" alt=""></a>
 
     </div>
+     <?php include_once "rodape.php";?>
 </body>
 </html>

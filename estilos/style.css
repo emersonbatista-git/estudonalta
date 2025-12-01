@@ -66,3 +66,20 @@ table.detalhes td {
 table.full {
     height: 400px;
 }
+
+/*Configuração de rodape e cabeçalho*/
+footer {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+header {
+    font-size: 10px;
+    text-align: right;
+}
+
+form#busca {
+    font-size: 10px;
+    text-align: right;
+}
