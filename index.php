@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem de Jogos</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
   <?php
@@ -21,12 +23,13 @@
     <div id="corpo">
       <?php require_once "topo.php";?>
         <h1>Escolha seu Jogo</h1>
+   
 <!--Inserir a barra de pesquisa -->
       <form action="index.php" method="get" id="busca">
 <!--Envia a informação para o proprio arquivo e criei o parametro "o" que irá receber as informações como nome(n), produtora(p), etc..
 Para trazer a seleção e ordenar temos que inseri as duas variaveis, utilizamos o &
 index.php?o=n&c=  -->
-          Ordenar:
+          Ordenar: 
           <a href="index.php?o=n&c=<?php echo $chave;?>">Nome</a> |
           <a href="index.php?o=p&c=<?php echo $chave;?>">Produtora</a> | 
           <a href="index.php?o=n1&c=<?php echo $chave;?>">Nota Alta</a> |
