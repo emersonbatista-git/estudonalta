@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+    <?php
+  /*Irá chamar a conexao com o banco e carregar as infoirmações nesta pagina, funções e login*/ 
+  require_once "includes/banco.php";
+  require_once "includes/funcoes.php";
+  require_once "includes/login.php";
+  
+  
+  ?>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -9,12 +17,7 @@
       rel="stylesheet">
 </head>
 <body>
-    <?php
-  /*Irá chamar a conexao com o banco e carregar as infoirmações nesta pagina*/ 
-  require_once "includes/banco.php";
-  /* Irá chamar a pagina de funcoes */
-  require_once "includes/funcoes.php";
-  ?>
+
     
     <div id="corpo">
         <?php require_once "topo.php";?>

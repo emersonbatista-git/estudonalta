@@ -10,10 +10,10 @@
 </head>
 <body>
   <?php
-  /*Irá chamar a conexao com o banco e carregar as infoirmações nesta pagina*/ 
+  /*Irá chamar a conexao com o banco e carregar as infoirmações nesta pagina, funcoes e login*/ 
   require_once "includes/banco.php";
-  /* Irá chamar a pagina de funcoes */
   require_once "includes/funcoes.php";
+  require_once "includes/login.php";
   /*Criar a variavel $ordem para receber parametro "o"*/
   $ordem = $_GET['o'] ?? "n";
   /*Criar a variavel $chave para receber a pesquisa do usuario*/ 
