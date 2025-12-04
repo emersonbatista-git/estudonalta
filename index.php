@@ -87,8 +87,18 @@ index.php?o=n&c=  -->
               echo " [$reg->genero]";
               echo "</br>";
               echo "($reg->produtora)";
-              echo "<td>Adm";
+              if (is_admin()){
+                echo "<td>";
+                echo "<i class='material-icons'>add_circle</i> ";
+                echo " <i class='material-icons'>edit</i> ";
+                echo "<i class='material-icons'>delete</i> ";
+              }elseif (is_editor()){
+                echo " <i class='material-icons'>edit</i> ";
 
+                      }
+
+                  
+                  
             }
 
            }

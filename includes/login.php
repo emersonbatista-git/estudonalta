@@ -43,5 +43,55 @@ function testarHash($senha, $hash) {
 
  //echo gerarHash($original) . " --- ";
 
+ //Permissoes, para aplicar permissões, verificar se está logado
+
+ //logout
+ //Logout
+
+        function logout() {
+            unset($_SESSION['user']);
+            unset($_SESSION['nome']);
+            unset($_SESSION['tipo']);
+        }
+
+    //permissao de acesso
+        function is_logado() {
+            if(empty($_SESSION['user'])) {
+                return false;
+            }else {
+                return true;
+            }
+        }
+
+        function is_admin(){
+            $t = $_SESSION['tipo'] ?? null;
+            if (is_null($t)) {
+                return false;
+            }else {
+                if ($t == 'admin') {
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+
+        }
+        function is_editor(){
+                 $t = $_SESSION['tipo'] ?? null;
+            if (is_null($t)) {
+                return false;
+            }else {
+                if ($t == 'editor') {
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+
+
+        }
+        
+
+
 
 ?>
