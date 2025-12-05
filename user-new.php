@@ -36,7 +36,13 @@
                 $tipo = $_POST['tipo'] ?? null;
 
                 if($senha1 === $senha2) {
-                    echo msg_sucesso("Senhas Conferem");
+                    $senha = gerarHash($senha1);
+                    $q = "INSERT INTO usuarios (usuario, nome, senha, tipo) VALUES ('$usuario', '$nome','$senha','$tipo')";
+                    if ($banco->query($q)) {
+                        echo msg_sucesso("Usuario $nome cadastrado com sucesso!");
+                    }else{
+                        echo msg_erro("Não foi possivel criar o usuario $usuario.");
+                    }
                     
 
                 }else {
